@@ -94,8 +94,7 @@ class UNet3D(nn.Module):
         return x
 
 if __name__ == "__main__":
-    # Testing the UNet3D architecture
-    model = UNet3D(in_channels=1, out_channels=35)  # Assuming 35 unique classes
-    x = torch.randn(1, 1, 128, 256, 256)  # Example input tensor
+    model = UNet3D(in_channels=1, out_channels=1)
+    x = torch.randn(1, 1, 16, 128, 128)
     out = model(x)
-    print(out.shape)  # Should be [1, 35, 128, 256, 256]
+    print("Output shape:", out.shape)
